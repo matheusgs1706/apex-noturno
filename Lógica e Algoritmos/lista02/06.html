@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - 06</title>
+
+    <script>
+
+        // Obter uma palavra
+        let palavra = prompt("Informe uma palavra")
+
+        // Obter a quantidade de caracteres
+        let contador = palavra.length;
+
+        // Contadores de vogais e consoantes
+        let vogal = 0
+        let consoante = 0
+
+        // Laço
+        let indice = 0
+
+        while(indice < contador){
+            
+            // Obter a letra
+            let letra = palavra.charAt(indice)
+
+            //Condicional
+            if(letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u"){
+                vogal++
+            }else{
+                consoante++
+            }
+
+            indice++
+        }
+
+        // Exibir consoantes e vogais
+        document.write("Há "+vogal+" vogais<br>")
+        document.write("Há "+consoante+" consoantes")
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

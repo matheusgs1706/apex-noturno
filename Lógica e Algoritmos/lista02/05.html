@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - 05</title>
+
+    <script>
+
+        // Obter uma palavra
+        let palavra = prompt("Informe uma palavra")
+
+        // Obter as duas últimas letras
+        let ultimasLetras = palavra.substr(-2)
+
+        // Obter todas as letras exceto as duas últumas
+        let primeirasLetras = palavra.substr(0, palavra.length-2)
+
+        // Condicional
+        if(ultimasLetras != "ar"){
+            document.write("Não é um verbo terminado em AR")
+        }else{
+            document.write("Eu "+primeirasLetras+"o<br>")
+            document.write("Tu "+primeirasLetras+"a<br>")
+            document.write("Ele "+primeirasLetras+"a<br>")
+            document.write("Nós "+primeirasLetras+"amos<br>")
+            document.write("Vós "+primeirasLetras+"ais<br>")
+            document.write("Eles "+primeirasLetras+"am<br>")
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - 04</title>
+
+    <script>
+
+        // Obter uma palavra
+        let palavra = prompt("Informe uma palavra")
+
+        // Obter a quantidade de caracteres
+        let contador = palavra.length;
+
+        // Laço
+        let indice = 0
+
+        while(indice < contador){
+            
+            //Condicional
+            if(indice % 2 == 0){
+                document.write(palavra.charAt(indice).toLocaleUpperCase())
+            }else{
+                document.write(palavra.charAt(indice).toLocaleLowerCase())
+            }
+
+            indice++
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

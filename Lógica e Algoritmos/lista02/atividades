@@ -1,0 +1,19 @@
+a) Será pedido um número, em seguida exiba seus 10 antecessores e seus 10 sucessores.
+
+
+b) Peça um número, enquanto não for informado o número zero, deverá ser pedido um número.
+Após informar os números exiba a soma.
+
+
+c) Informe um número, em seguida faça a tabuada daquele número.
+
+
+d) O usuário irá informar uma palavra, intercale as letras entre maiúsculas e minúsculas.
+Dica: Utilizar o mod (%) 
+
+
+e) Será pedido para o usuário informar um verbo terminado em AR, em seguida conjugue o verbo.
+Valide caso não seja terminado em AR.
+
+
+f) Será informada uma palavra, em seguida conte quantos caracteres são consoantes e quantos são vogais.
