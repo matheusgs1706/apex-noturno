@@ -6,9 +6,67 @@
 
     <script>
 
+        // Vetor
+        let nomes = []
+
         // Funcão de cadastro
         function cadastrar(){
-            alert("Hello World!")
+            // Armazenar o objeto
+            let campo = document.getElementById("campo")
+
+            // Validar nome duplicado
+            if(nomesDuplicados(campo.value) == false){
+
+                // Adicionar ao vetor
+                nomes.push(campo.value)
+
+                // Atualizar lista
+                listar(campo.value)
+
+                // Limpar o campo
+                campo.value = ""
+
+                // Cursor
+                campo.focus()
+
+            }else{
+                alert("O nome informado já está cadastrado")
+            }
+        }
+
+        // Listagem
+        function listar(nome){
+            // Obter a lista
+            let lista = document.getElementById("lista")
+
+            // Criar item de lista
+            let item = document.createElement("li")
+
+            // Texto do item
+            let texto = document.createTextNode(nome)
+
+            // Unir o item com o texto
+            item.appendChild(texto)
+
+            // Adicionar o item na lista
+            lista.appendChild(item)
+        }
+
+        // Verificar nomes duplicados
+        function nomesDuplicados(nome){
+            // Variável
+            let retorno = false
+
+            // Validação
+            for(let indice=0; indice<nomes.length; indice++){
+                if(nomes[indice] == nome){
+                    retorno = true
+                    break
+                }
+            }
+
+            // Retorno
+            return retorno
         }
         
     </script>
@@ -16,8 +74,11 @@
 <body>
     
     <!-- Formulário -->
-    <input type="text" placeholder="Informe um nome">
+    <input type="text" placeholder="Informe um nome" id="campo">
     <button onclick="cadastrar()">Enviar</button>
+
+    <!-- Lista -->
+    <ul id="lista"></ul>
 
 </body>
 </html>
