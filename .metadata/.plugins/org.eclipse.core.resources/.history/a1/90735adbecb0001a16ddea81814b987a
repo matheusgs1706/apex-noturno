@@ -1,0 +1,10 @@
+package padrao;
+
+public interface PadraoCrud {
+	
+	public void cadastrar();
+	public void selecionar();
+	public void alterar();
+	public void deletar();
+
+}

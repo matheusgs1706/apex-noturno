@@ -1,0 +1,33 @@
+package dao;
+
+import padrao.PadraoCrud;
+
+public class ClienteDao implements PadraoCrud, PadraoFiltragem{
+
+	@Override
+	public void cadastrar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selecionar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void alterar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deletar() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

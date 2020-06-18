@@ -1,0 +1,12 @@
+package dao;
+
+import beans.ClienteBeans;
+import padrao.PadraoCrud;
+import padrao.PadraoFiltragem;
+
+public class ClienteDao implements PadraoCrud, PadraoFiltragem{
+
+
+	
+
+}

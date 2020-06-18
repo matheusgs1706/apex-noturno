@@ -1,0 +1,8 @@
+package padrao;
+
+public interface PadraoCrud {
+	
+	public void cadastrar();
+	
+
+}

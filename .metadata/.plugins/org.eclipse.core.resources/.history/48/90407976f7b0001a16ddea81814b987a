@@ -1,0 +1,20 @@
+package principal;
+
+import beans.ClienteBeans;
+import dao.ClienteDao;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		ClienteBeans cb = new ClienteBeans();
+		cb.setCpf("794.861.459-11");
+		cb.setNome("Jean Lucas");
+		cb.setNascimento("1986/04/30");
+		
+		ClienteDao cd = new ClienteDao();
+		//cd.cadastrar(cb);
+		cd.selecionar();
+	}
+
+}

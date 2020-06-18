@@ -1,0 +1,80 @@
+package dao;
+
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import beans.ClienteBeans;
+import conexao.Conexao;
+import padrao.PadraoCrud;
+import padrao.PadraoFiltragem;
+
+public class ClienteDao implements PadraoCrud, PadraoFiltragem{
+
+	@Override
+	public void filtrarCPF(String CPF) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void filtrarNome(String nome) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void cadastrar(Object obj) {
+		
+		//Obter o objeto
+		ClienteBeans cb = (ClienteBeans)obj;
+		
+		//SQL
+		String sql = "INSERT INTO clientes VALUES (?,?,?)";
+		
+		// Tentativa
+		try {
+			Conexao.obterConexao();
+			
+			PreparedStatement pstmt = Conexao.con.prepareStatement(sql);
+			pstmt.setString(1,cb.getCpf());
+			pstmt.setString(2,cb.getNome());
+			pstmt.setString(3,cb.getNascimento());
+			
+			System.out.println("Cadastro efetuado");
+		}catch(Exception e){
+			System.out.println("Falha: "+e.getMessage());
+		}
+		
+	}
+
+	@Override
+	public void selecionar() {
+		//SQL
+		String sql = "SELECT * FROM clientes";
+		
+		// Tentativa
+				try {
+					Conexao.obterConexao();
+					
+					Statement stmt = Conexao.con.createStatement();
+					
+				}catch(Exception e){
+					System.out.println("Falha ao listar: "+e.getMessage());
+				}
+		
+	}
+
+	@Override
+	public void alterar(Object obj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deletar(String parametro) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\Apex07\Desktop\Apex\Recuperação - Java Avançado\.metadata\.plugins\org.eclipse.jdt.core
+2872044937.index
+1008458406.index
+1116571602.index

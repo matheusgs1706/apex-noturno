@@ -1,0 +1,48 @@
+package dao;
+
+import beans.ClienteBeans;
+import padrao.PadraoCrud;
+import padrao.PadraoFiltragem;
+
+public class ClienteDao implements PadraoCrud, PadraoFiltragem{
+
+	@Override
+	public void filtrarCPF(String CPF) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void filtrarNome(String nome) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void cadastrar(ClienteBeans obj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selecionar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void alterar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deletar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	
+
+}
