@@ -1,0 +1,78 @@
+package forms;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class ClienteForm extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textNome;
+	private JTextField txtNascimento;
+	private JTextField textCpf;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ClienteForm frame = new ClienteForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ClienteForm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 11, 414, 35);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Produto");
+		lblNewLabel.setBounds(10, 11, 46, 14);
+		panel.add(lblNewLabel);
+		
+		textNome = new JTextField();
+		textNome.setText("Digite seu nome");
+		textNome.setBounds(139, 41, 155, 20);
+		contentPane.add(textNome);
+		textNome.setColumns(10);
+		
+		txtNascimento = new JTextField();
+		txtNascimento.setText("Digite sua data de nascimento");
+		txtNascimento.setBounds(139, 72, 155, 20);
+		contentPane.add(txtNascimento);
+		txtNascimento.setColumns(10);
+		
+		textCpf = new JTextField();
+		textCpf.setText("Digite seu CPF");
+		textCpf.setBounds(139, 103, 155, 20);
+		contentPane.add(textCpf);
+		textCpf.setColumns(10);
+		
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setBounds(173, 175, 89, 23);
+		contentPane.add(btnCadastrar);
+	}
+}

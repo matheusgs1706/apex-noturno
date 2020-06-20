@@ -1,0 +1,114 @@
+package forms;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import beans.ClienteBeans;
+import dao.ClienteDao;
+
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class ClienteForm extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textNome;
+	private JTextField txtNascimento;
+	private JTextField textCpf;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ClienteForm frame = new ClienteForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ClienteForm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 11, 414, 35);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Cadastrar Clientes");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNewLabel.setBounds(134, 11, 141, 14);
+		panel.add(lblNewLabel);
+		
+		textNome = new JTextField();
+		textNome.setText("Digite seu nome");
+		textNome.setBounds(139, 65, 155, 20);
+		contentPane.add(textNome);
+		textNome.setColumns(10);
+		
+		txtNascimento = new JTextField();
+		txtNascimento.setText("Digite sua data de nascimento");
+		txtNascimento.setBounds(139, 96, 155, 20);
+		contentPane.add(txtNascimento);
+		txtNascimento.setColumns(10);
+		
+		textCpf = new JTextField();
+		textCpf.setText("Digite seu CPF");
+		textCpf.setBounds(139, 127, 155, 20);
+		contentPane.add(textCpf);
+		textCpf.setColumns(10);
+		
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String nome = textNome.getText();
+				String nascimento = txtNascimento.getText();
+				String cpf = textCpf.getText();
+				
+				ClienteBeans cb = new ClienteBeans();
+				cb.setNome(nome);
+				cb.setNascimento(nascimento);
+				cb.setCpf(cpf); 
+				
+				ClienteDao cd = new ClienteDao();
+				cd.cadastrar(cb);				
+			}
+		});
+		
+		btnCadastrar.setBounds(173, 158, 89, 23);
+		contentPane.add(btnCadastrar);
+		
+		DefaultTableModel dados = new DefaultTableModel();
+		
+		table = new JTable(dados);
+		
+		table.setBounds(10, 192, 414, 58);
+		contentPane.add(table);
+	}
+}
